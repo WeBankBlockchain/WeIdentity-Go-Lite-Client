@@ -81,7 +81,7 @@ func RegisterCpt(restServerIp string, restServerPort string, weid string, cptJso
 
 func CreateCredentialPojo(restServerIp string, restServerPort string, claim string, issuer string, expirationDate string, cptId uint, privateKeyBigInt *big.Int) (CredentialEncodeResponse, string, error) {
 	funcName := "createCredentialPojo"
-	encodeResponseStr, err1 := consumeCreateCredentialEncodeRestApi("39.106.69.186", "6001", funcName, claim, cptId, issuer, expirationDate)
+	encodeResponseStr, err1 := consumeCreateCredentialEncodeRestApi(restServerIp, restServerPort, funcName, claim, cptId, issuer, expirationDate)
 	if err1 != nil {
 		return CredentialEncodeResponse{}, "", err1
 	}
